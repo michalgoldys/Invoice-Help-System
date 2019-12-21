@@ -6,14 +6,14 @@ public class Contractor {
     private String contractorStreet;
     private String contractorCity;
     private String contractorPostalCode;
-    private String contractorTaxNubmer;
+    private String contractorTaxNumber;
 
-    private Contractor(String contractorName, String contractorStreet, String contractorCity, String contractorPostalCode, String contractorTaxNubmer) {
+    private Contractor(String contractorName, String contractorStreet, String contractorCity, String contractorPostalCode, String contractorTaxNumber) {
         this.contractorName = contractorName;
         this.contractorStreet = contractorStreet;
         this.contractorCity = contractorCity;
         this.contractorPostalCode = contractorPostalCode;
-        this.contractorTaxNubmer = contractorTaxNubmer;
+        this.contractorTaxNumber = contractorTaxNumber;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Contractor {
                 ", contractorStreet='" + contractorStreet + '\'' +
                 ", contractorCity='" + contractorCity + '\'' +
                 ", contractorPostalCode='" + contractorPostalCode + '\'' +
-                ", contractorTaxNubmer='" + contractorTaxNubmer + '\'' +
+                ", contractorTaxNumber='" + contractorTaxNumber + '\'' +
                 '}';
     }
 
@@ -33,7 +33,7 @@ public class Contractor {
         private String contractorStreet;
         private String contractorCity;
         private String contractorPostalCode;
-        private String contractorTaxNubmer;
+        private String contractorTaxNumber;
 
         public Builder setContractorName(String contractorName) {
             this.contractorName = contractorName;
@@ -55,13 +55,13 @@ public class Contractor {
             return this;
         }
 
-        public Builder setContractorTaxNubmer(String contractorTaxNubmer) {
-            this.contractorTaxNubmer = contractorTaxNubmer;
+        public Builder setContractorTaxNumber(String contractorTaxNumber) {
+            this.contractorTaxNumber = contractorTaxNumber;
             return this;
         }
 
         public Contractor build(){
-            return new Contractor(contractorName, contractorStreet, contractorCity, contractorPostalCode, contractorTaxNubmer);
+            return new Contractor(contractorName, contractorStreet, contractorCity, contractorPostalCode, contractorTaxNumber);
         }
     }
 }
