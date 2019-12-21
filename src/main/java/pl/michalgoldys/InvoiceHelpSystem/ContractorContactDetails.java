@@ -2,7 +2,7 @@ package pl.michalgoldys.InvoiceHelpSystem;
 
 import java.util.Objects;
 
-public class ContractorContactDetalis {
+public class ContractorContactDetails {
 
     private String contactEmailAddress;
     private String contactStreet;
@@ -12,8 +12,8 @@ public class ContractorContactDetalis {
     private String contactPersonSurname;
     private String contactMobile;
 
-    private ContractorContactDetalis(String contactEmailAdress, String contactStreet, String contactCity, String contactPostalCode, String contactPersonName, String contactPersonSurname, String contactMobile) {
-        this.contactEmailAddress = contactEmailAdress;
+    private ContractorContactDetails(String contactEmailAddress, String contactStreet, String contactCity, String contactPostalCode, String contactPersonName, String contactPersonSurname, String contactMobile) {
+        this.contactEmailAddress = contactEmailAddress;
         this.contactStreet = contactStreet;
         this.contactCity = contactCity;
         this.contactPostalCode = contactPostalCode;
@@ -22,12 +22,12 @@ public class ContractorContactDetalis {
         this.contactMobile = contactMobile;
     }
 
-    public ContractorContactDetalis() {
+    public ContractorContactDetails() {
     }
 
     @Override
     public String toString() {
-        return "ContractorContactDetalis{" +
+        return "ContractorContactDetails{" +
                 "contactEmailAddress='" + contactEmailAddress + '\'' +
                 ", contactStreet='" + contactStreet + '\'' +
                 ", contactCity='" + contactCity + '\'' +
@@ -42,7 +42,7 @@ public class ContractorContactDetalis {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ContractorContactDetalis that = (ContractorContactDetalis) o;
+        ContractorContactDetails that = (ContractorContactDetails) o;
         return Objects.equals(contactEmailAddress, that.contactEmailAddress) &&
                 Objects.equals(contactStreet, that.contactStreet) &&
                 Objects.equals(contactCity, that.contactCity) &&
@@ -102,8 +102,8 @@ public class ContractorContactDetalis {
             return this;
         }
 
-        public ContractorContactDetalis build(){
-            return new ContractorContactDetalis(contactEmailAddress, contactStreet, contactCity, contactPostalCode, contactPersonName, contactPersonSurname, contactMobile);
+        public ContractorContactDetails build(){
+            return new ContractorContactDetails(contactEmailAddress, contactStreet, contactCity, contactPostalCode, contactPersonName, contactPersonSurname, contactMobile);
         }
     }
 }
