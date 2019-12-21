@@ -6,12 +6,12 @@ public class AccountingOrder {
 
     private Order order;
     private Contractor contractor;
-    private ContractorContactDetalis contractorContactDetalis;
+    private ContractorContactDetails contractorContactDetails;
 
-    public AccountingOrder(Order order, Contractor contractor, ContractorContactDetalis contractorContactDetalis) {
+    public AccountingOrder(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails) {
         this.order = order;
         this.contractor = contractor;
-        this.contractorContactDetalis = contractorContactDetalis;
+        this.contractorContactDetails = contractorContactDetails;
     }
 
     @Override
@@ -19,7 +19,7 @@ public class AccountingOrder {
         return "AccountingOrder{" +
                 "order=" + order +
                 ", contractor=" + contractor +
-                ", contractorContactDetalis=" + contractorContactDetalis +
+                ", contractorContactDetails=" + contractorContactDetails +
                 '}';
     }
 
@@ -30,11 +30,11 @@ public class AccountingOrder {
         AccountingOrder that = (AccountingOrder) o;
         return Objects.equals(order, that.order) &&
                 Objects.equals(contractor, that.contractor) &&
-                Objects.equals(contractorContactDetalis, that.contractorContactDetalis);
+                Objects.equals(contractorContactDetails, that.contractorContactDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(order, contractor, contractorContactDetalis);
+        return Objects.hash(order, contractor, contractorContactDetails);
     }
 }
