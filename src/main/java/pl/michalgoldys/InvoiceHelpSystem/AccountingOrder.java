@@ -1,12 +1,25 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity(name = "accounting_order")
 public class AccountingOrder {
 
-    private Order order;
-    private Contractor contractor;
-    private ContractorContactDetails contractorContactDetails;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private final Order order;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private final Contractor contractor;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private final ContractorContactDetails contractorContactDetails;
 
     public AccountingOrder(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails) {
         this.order = order;
