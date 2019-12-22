@@ -1,15 +1,28 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity(name = "contractor_contact_details")
 public class ContractorContactDetails {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "contact_email_address")
     private String contactEmailAddress;
+    @Column(name = "contact_street")
     private String contactStreet;
+    @Column(name = "contact_city")
     private String contactCity;
+    @Column(name = "contact_postal_code")
     private String contactPostalCode;
+    @Column(name = "contact_person_name")
     private String contactPersonName;
+    @Column(name = "contact_person_surname")
     private String contactPersonSurname;
+    @Column(name = "contact_mobile")
     private String contactMobile;
 
     private ContractorContactDetails(String contactEmailAddress, String contactStreet, String contactCity, String contactPostalCode, String contactPersonName, String contactPersonSurname, String contactMobile) {
@@ -20,9 +33,6 @@ public class ContractorContactDetails {
         this.contactPersonName = contactPersonName;
         this.contactPersonSurname = contactPersonSurname;
         this.contactMobile = contactMobile;
-    }
-
-    public ContractorContactDetails() {
     }
 
     @Override
