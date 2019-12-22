@@ -1,12 +1,22 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity(name = "order_table")
 public class Order {
 
     private final OrderType orderType;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "amount")
     private Double amount;
+    @Column(name = "issue_date")
     private String issueDate;
 
     public Order(OrderType orderType, Double amount, String issueDate) {
