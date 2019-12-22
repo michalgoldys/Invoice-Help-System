@@ -1,11 +1,23 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
+import javax.persistence.*;
+
+@Entity(name = "contractor")
 public class Contractor {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "contractor_name")
     private String contractorName;
+    @Column(name = "contractor_street")
     private String contractorStreet;
+    @Column(name = "contractor_city")
     private String contractorCity;
+    @Column(name = "contractor_postal_code")
     private String contractorPostalCode;
+    @Column(name = "contractor_tax_number")
     private String contractorTaxNumber;
 
     private Contractor(String contractorName, String contractorStreet, String contractorCity, String contractorPostalCode, String contractorTaxNumber) {
