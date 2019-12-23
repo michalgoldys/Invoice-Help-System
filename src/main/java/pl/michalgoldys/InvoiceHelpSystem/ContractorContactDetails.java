@@ -8,7 +8,7 @@ public class ContractorContactDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long contractorContactDetailsId;
 
     @Column(name = "contact_email_address")
     private String contactEmailAddress;
@@ -24,6 +24,10 @@ public class ContractorContactDetails {
     private String contactPersonSurname;
     @Column(name = "contact_mobile")
     private String contactMobile;
+
+    protected ContractorContactDetails(){
+
+    }
 
     private ContractorContactDetails(String contactEmailAddress, String contactStreet, String contactCity, String contactPostalCode, String contactPersonName, String contactPersonSurname, String contactMobile) {
         this.contactEmailAddress = contactEmailAddress;
