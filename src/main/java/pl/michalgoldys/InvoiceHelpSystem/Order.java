@@ -8,16 +8,20 @@ import java.util.Objects;
 @Entity(name = "order_table")
 public class Order {
 
-    private final OrderType orderType;
+    private OrderType orderType;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long orderId;
 
     @Column(name = "amount")
     private Double amount;
     @Column(name = "issue_date")
     private String issueDate;
+
+    protected Order(){
+
+    }
 
     public Order(OrderType orderType, Double amount, String issueDate) {
         this.orderType = orderType;
