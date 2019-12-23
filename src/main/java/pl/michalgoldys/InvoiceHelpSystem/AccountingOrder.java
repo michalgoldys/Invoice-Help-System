@@ -10,16 +10,20 @@ public class AccountingOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long accountingOrderId;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private final Order order;
+    private Order order;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private final Contractor contractor;
+    private Contractor contractor;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private final ContractorContactDetails contractorContactDetails;
+    private ContractorContactDetails contractorContactDetails;
+
+    protected AccountingOrder(){
+
+    }
 
     public AccountingOrder(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails) {
         this.order = order;
