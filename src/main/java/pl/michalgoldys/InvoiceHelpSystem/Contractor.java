@@ -7,7 +7,7 @@ public class Contractor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long contractorId;
 
     @Column(name = "contractor_name")
     private String contractorName;
@@ -19,6 +19,10 @@ public class Contractor {
     private String contractorPostalCode;
     @Column(name = "contractor_tax_number")
     private String contractorTaxNumber;
+
+    protected Contractor(){
+
+    }
 
     private Contractor(String contractorName, String contractorStreet, String contractorCity, String contractorPostalCode, String contractorTaxNumber) {
         this.contractorName = contractorName;
