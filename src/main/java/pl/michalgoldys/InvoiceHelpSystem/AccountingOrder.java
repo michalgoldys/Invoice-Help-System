@@ -21,6 +21,10 @@ public class AccountingOrder {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private ContractorContactDetails contractorContactDetails;
 
+    public Long getAccountingOrderId() {
+        return accountingOrderId;
+    }
+
     protected AccountingOrder(){
 
     }

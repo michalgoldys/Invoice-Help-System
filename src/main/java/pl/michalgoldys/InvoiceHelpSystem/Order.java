@@ -19,6 +19,10 @@ public class Order {
     @Column(name = "issue_date")
     private String issueDate;
 
+    public Long getOrderId() {
+        return orderId;
+    }
+
     protected Order(){
 
     }

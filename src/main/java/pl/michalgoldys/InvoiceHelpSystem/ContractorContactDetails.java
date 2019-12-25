@@ -25,6 +25,10 @@ public class ContractorContactDetails {
     @Column(name = "contact_mobile")
     private String contactMobile;
 
+    public Long getContractorContactDetailsId() {
+        return contractorContactDetailsId;
+    }
+
     protected ContractorContactDetails(){
 
     }

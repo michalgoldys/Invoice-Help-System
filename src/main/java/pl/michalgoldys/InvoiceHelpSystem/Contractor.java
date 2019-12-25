@@ -20,6 +20,10 @@ public class Contractor {
     @Column(name = "contractor_tax_number")
     private String contractorTaxNumber;
 
+    public Long getContractorId() {
+        return contractorId;
+    }
+
     protected Contractor(){
 
     }
