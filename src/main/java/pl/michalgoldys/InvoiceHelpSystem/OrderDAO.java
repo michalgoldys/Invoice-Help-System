@@ -8,7 +8,8 @@ import java.util.Collection;
 public interface OrderDAO extends Repository<Order, Long> {
 
     Collection<Order> findAll();
-    Order deleteByorderId(Long orderId);
-    Order getOne(Long orderId);
+    Order delete(Order order);
     Order save(Order order);
+    Order findById(Long orderId);
+    Order deleteById(Long id);
 }
