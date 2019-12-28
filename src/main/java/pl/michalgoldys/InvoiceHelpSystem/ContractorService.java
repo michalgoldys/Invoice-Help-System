@@ -33,7 +33,7 @@ public class ContractorService {
 
     public Collection<Contractor> findAll(){
         log.info("Getting objects from database: ");
-        ArrayList<Contractor> objects = new ArrayList<>(contractorDAO.findAll());
+        ArrayList<Contractor> objects = new ArrayList<Contractor>(contractorDAO.findAll());
         log.info("Returning array of objects: ");
         return objects;
     }
