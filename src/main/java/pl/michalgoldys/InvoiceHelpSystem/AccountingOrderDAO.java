@@ -11,6 +11,5 @@ public interface AccountingOrderDAO extends Repository<AccountingOrder, Long> {
     AccountingOrder delete(AccountingOrder accountingOrder);
     AccountingOrder save(AccountingOrder accountingOrder);
     AccountingOrder findById(Long accountingOrderId);
-    AccountingOrder existsById(Long accountingOrderId);
     AccountingOrder deleteById(Long id);
 }
