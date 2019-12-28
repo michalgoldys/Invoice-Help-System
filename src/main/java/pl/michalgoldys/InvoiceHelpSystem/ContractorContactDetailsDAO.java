@@ -8,7 +8,8 @@ import java.util.Collection;
 public interface ContractorContactDetailsDAO extends Repository<ContractorContactDetails, Long> {
 
     Collection<ContractorContactDetails> findAll();
-    ContractorContactDetails deleteBycontractorContactDetailsId(Long contractorContactDetailsId);
-    ContractorContactDetails getOne(Long contractorContactDetailsId);
+    ContractorContactDetails delete(ContractorContactDetails contractorContactDetails);
     ContractorContactDetails save(ContractorContactDetails contractorContactDetails);
+    ContractorContactDetails findById(Long contractorContactDetailsId);
+    ContractorContactDetails deleteById(Long id);
 }
