@@ -32,7 +32,7 @@ public class AccountingOrderService {
 
     public Collection<AccountingOrder> findAll(){
         log.info("Getting objects from database: ");
-        ArrayList<AccountingOrder> objects = new ArrayList<>(accountingOrderDAO.findAll());
+        ArrayList<AccountingOrder> objects = new ArrayList<AccountingOrder>(accountingOrderDAO.findAll());
         log.info("Returning array of objects: ");
         return objects;
     }
