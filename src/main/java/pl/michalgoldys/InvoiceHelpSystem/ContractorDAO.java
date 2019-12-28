@@ -8,7 +8,8 @@ import java.util.Collection;
 public interface ContractorDAO extends Repository<Contractor, Long> {
 
     Collection<Contractor> findAll();
-    Contractor deleteBycontractorId(Long contractorId);
-    Contractor getOne(Long contractorId);
+    Contractor delete(Contractor contractor);
     Contractor save(Contractor contractor);
+    Contractor findById(Long contractorId);
+    Contractor deleteById(Long id);
 }
