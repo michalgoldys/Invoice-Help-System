@@ -20,7 +20,7 @@ public class AccountingOrderService {
     }
 
     public AccountingOrder findById(Long id){
-        log.info("Checking if there is object to return.. ");
+        log.info("Checking if there is object to return.. " + id);
         return accountingOrderGetter(id);
     }
 
