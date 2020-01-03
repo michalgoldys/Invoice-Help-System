@@ -8,6 +8,10 @@ public class User {
     private String userName;
     private String userPassword;
 
+    public UserType getUserType() {
+        return userType;
+    }
+
     public User(UserType userType, String userName, String userPassword) {
         this.userType = userType;
         this.userName = userName;
