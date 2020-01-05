@@ -1,10 +1,11 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.Objects;
 
+@Getter
 @Entity(name = "order_table")
 public class Order {
 
@@ -18,19 +19,18 @@ public class Order {
     private Double amount;
     @Column(name = "issue_date")
     private String issueDate;
-
-    public Long getOrderId() {
-        return orderId;
-    }
+    @Column(name ="description")
+    private String description;
 
     protected Order(){
 
     }
 
-    public Order(OrderType orderType, Double amount, String issueDate) {
+    public Order(OrderType orderType, Double amount, String issueDate, String description) {
         this.orderType = orderType;
         this.amount = amount;
         this.issueDate = issueDate;
+        this.description = description;
     }
 
     @Override
@@ -39,6 +39,7 @@ public class Order {
                 "orderType=" + orderType +
                 ", amount=" + amount +
                 ", issueDate='" + issueDate + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 
@@ -49,11 +50,12 @@ public class Order {
         Order order = (Order) o;
         return orderType == order.orderType &&
                 Objects.equals(amount, order.amount) &&
-                Objects.equals(issueDate, order.issueDate);
+                Objects.equals(issueDate, order.issueDate) &&
+                Objects.equals(description, order.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderType, amount, issueDate);
+        return Objects.hash(orderType, amount, issueDate, description);
     }
 }
