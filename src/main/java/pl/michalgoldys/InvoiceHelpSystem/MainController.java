@@ -2,6 +2,7 @@ package pl.michalgoldys.InvoiceHelpSystem;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,10 @@ public class MainController {
     AccountingOrderService accountingOrderService;
 
     @GetMapping("/index")
-    private String mainPage(){
+    private String mainPage(Model model){
+
+        model.addAttribute("AccountingOrderList", accountingOrderService.findAll());
+
         return "index.html";
     }
 
