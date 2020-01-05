@@ -1,7 +1,10 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
+@Getter
 @Entity(name = "contractor")
 public class Contractor {
 
@@ -19,10 +22,6 @@ public class Contractor {
     private String contractorPostalCode;
     @Column(name = "contractor_tax_number")
     private String contractorTaxNumber;
-
-    public Long getContractorId() {
-        return contractorId;
-    }
 
     protected Contractor(){
 

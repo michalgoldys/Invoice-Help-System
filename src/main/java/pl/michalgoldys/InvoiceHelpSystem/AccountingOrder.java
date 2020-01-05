@@ -1,10 +1,11 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.Objects;
 
+@Getter
 @Entity(name = "accounting_order")
 public class AccountingOrder {
 
@@ -20,10 +21,6 @@ public class AccountingOrder {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private ContractorContactDetails contractorContactDetails;
-
-    public Long getAccountingOrderId() {
-        return accountingOrderId;
-    }
 
     protected AccountingOrder(){
 

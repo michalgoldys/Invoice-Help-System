@@ -1,8 +1,11 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+@Getter
 @Entity(name = "contractor_contact_details")
 public class ContractorContactDetails {
 
@@ -24,10 +27,6 @@ public class ContractorContactDetails {
     private String contactPersonSurname;
     @Column(name = "contact_mobile")
     private String contactMobile;
-
-    public Long getContractorContactDetailsId() {
-        return contractorContactDetailsId;
-    }
 
     protected ContractorContactDetails(){
 
