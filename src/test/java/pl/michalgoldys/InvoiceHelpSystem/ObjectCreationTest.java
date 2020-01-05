@@ -22,7 +22,7 @@ public class ObjectCreationTest {
     @Test
     public void shouldNotThrownExceptionDuringCreationAndSaveOfAccountingOrderObject(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         Contractor contractor = new Contractor.Builder()
                 .setContractorStreet("Warszawska")
@@ -50,7 +50,7 @@ public class ObjectCreationTest {
 
     @Test
     public void shouldNotThrownExceptionDuringCreationAndSaveOfOrderObject(){
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         orderDAO.save(order);
     }

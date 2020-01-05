@@ -20,7 +20,7 @@ public class AccountingOrderServiceTest {
     @Test
     public void shouldSaveObjectWithoutException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         Contractor contractor = new Contractor.Builder()
                 .setContractorStreet("Warszawska")
@@ -49,7 +49,7 @@ public class AccountingOrderServiceTest {
     @Transactional
     @Test
     public void shouldGetAllAccountingOrderObjectsWithoutThrowingException(){
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         Contractor contractor = new Contractor.Builder()
                 .setContractorStreet("Warszawska")
@@ -84,7 +84,7 @@ public class AccountingOrderServiceTest {
 
     @Test
     public void shouldDeleteAccountingOrderObjectWithoutThrowingException(){
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         Contractor contractor = new Contractor.Builder()
                 .setContractorStreet("Warszawska")
@@ -114,7 +114,7 @@ public class AccountingOrderServiceTest {
     @Test
     public void shouldDeleteAccountingOrderByItsIdWithoutThrowingException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         Contractor contractor = new Contractor.Builder()
                 .setContractorStreet("Warszawska")
@@ -151,7 +151,7 @@ public class AccountingOrderServiceTest {
     @Test
     public void shouldGetByIdWithoutException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         Contractor contractor = new Contractor.Builder()
                 .setContractorStreet("Warszawska")

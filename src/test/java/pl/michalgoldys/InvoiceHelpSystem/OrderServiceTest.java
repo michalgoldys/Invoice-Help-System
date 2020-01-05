@@ -19,7 +19,7 @@ public class OrderServiceTest {
     @Test
     public void shouldSaveWithoutException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         orderService.save(order);
     }
@@ -27,7 +27,7 @@ public class OrderServiceTest {
     @Test
     public void shouldGetAllObjectsWithoutException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         orderService.save(order);
 
@@ -42,7 +42,7 @@ public class OrderServiceTest {
     @Test
     public void shouldDeleteByObjectWithoutException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         orderService.save(order);
 
@@ -52,7 +52,7 @@ public class OrderServiceTest {
     @Test
     public void shouldDeleteByIdWithoutException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         orderService.save(order);
 
@@ -69,7 +69,7 @@ public class OrderServiceTest {
     @Test
     public void shouldGetByIdWithoutException(){
 
-        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019");
+        Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019","Test description");
 
         orderService.save(order);
 
