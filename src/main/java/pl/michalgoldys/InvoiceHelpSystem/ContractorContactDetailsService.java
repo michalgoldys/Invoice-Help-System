@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class ContractorContactDetailsService {
+public class ContractorContactDetailsService implements GenericDatabaseServiceInterface<ContractorContactDetails> {
 
     @Autowired
     ContractorContactDetailsDAO contractorContactDetailsDAO;
@@ -19,33 +19,34 @@ public class ContractorContactDetailsService {
         return Optional.ofNullable(contractorContactDetailsDAO.findById(id)).orElse(new ContractorContactDetails());
     }
 
+    @Override
     public ContractorContactDetails findById(Long id){
-        log.info("Checking if there is object to return.. " + id);
+        log.info("Checking if there is CONTRACTOR CONTACT DETAILS object to return with ID: " + id);
         return contractorContactDetailsGetter(id);
     }
 
+    @Override
     public void save(ContractorContactDetails contractorContactDetails){
-        log.info("Saving new object: " + contractorContactDetails.toString());
+        log.info("Saving new CONTRACTOR CONTACT DETAILS object: " + contractorContactDetails.toString());
         contractorContactDetailsDAO.save(contractorContactDetails);
-        log.info("Saved: " + contractorContactDetails.getContractorContactDetailsId());
     }
 
+    @Override
     public Collection<ContractorContactDetails> findAll(){
-        log.info("Getting objects from database: ");
+        log.info("Getting all CONTRACTOR CONTACT DETAILS objects from database ");
         ArrayList<ContractorContactDetails> objects = new ArrayList<ContractorContactDetails>(contractorContactDetailsDAO.findAll());
-        log.info("Returning array of objects: ");
         return objects;
     }
 
+    @Override
     public void delete(ContractorContactDetails contractorContactDetails){
-        log.info("About to delete object: " + contractorContactDetails.getContractorContactDetailsId());
+        log.info("About to delete CONTRACTOR CONTACT DETAILS object with ID:  " + contractorContactDetails.getContractorContactDetailsId());
         contractorContactDetailsDAO.delete(contractorContactDetails);
-        log.info("Deleted by object");
     }
 
+    @Override
     public void delete(Long id){
-        log.info("About to delete object: " + id);
+        log.info("About to delete CONTRACTOR CONTACT DETAILS object with ID: " + id);
         contractorContactDetailsDAO.deleteById(id);
-        log.info("Deleted by id");
     }
 }
