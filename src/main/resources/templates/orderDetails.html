@@ -49,6 +49,175 @@
         </div>
     </nav>
 
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <div class="input-group mb-3 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="orderType">Typ Zlecenia:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.order.orderType}" readonly>
+                </div>
+            </div>
+            <div class="col-md-auto">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="issueDate">Data Zlecenia:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.order.issueDate}" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contractorName">Nazwa Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractor.contractorName}" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row md-center w-100">
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contractorCity">Miasto Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractor.contractorCity}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contractorPostalCode">Kod Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractor.contractorPostalCode}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contractorStreet">Ulica Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractor.contractorStreet}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contractorNip">NIP Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractor.contractorTaxNumber}" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="orderAmount">Kwota Zlecenia:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.order.amount}" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contactPersonName">Imię osoby kontaktowej:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactPersonName}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contactPersonSurname">Nazwisko osoby kontaktowej:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactPersonSurname}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contactCity">Miasto do Korespondencji:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactCity}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contactPostalCode">Kod pocztowy do Korespondencji:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactPostalCode}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contactStreet">Ulica do Korespondencji:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactStreet}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contactMobile">Telefon do Korespondencji:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactMobile}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="contactEmailAddress">Email do Korespondencji:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactEmailAddress}" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="isContinuous" disabled>
+                    <label class="custom-control-label" for="isContinuous" data-th-value="${AccountingOrderObject.order.isContinuous}" >Stałe zlecenie</label>
+                </div>
+            </div>
+            <div class="col-md-auto">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="isSingleTime" disabled>
+                    <label class="custom-control-label" for="isSingleTime" data-th-value="${AccountingOrderObject.order.isSingleTime}">Jednorazowe zlecenie</label>
+                </div>
+            </div>
+            <div class="col-md-auto">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="isActive" disabled>
+                        <label class="custom-control-label" for="isActive" data-th-value="${AccountingOrderObject.order.isActive}" >Zakończone</label>
+                    </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Opis Zlecenia:</span>
+                    </div>
+                    <textarea class="form-control" aria-label="description" data-th-field="${AccountingOrderObject.order.description}" readonly></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-1">
+                <a data-th-href="@{/app/index}"><button type="button" class="btn btn-primary">Powrót</button></a>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 <script src="/jquery/3.4.1/dist/jquery.slim.min.js"></script>
