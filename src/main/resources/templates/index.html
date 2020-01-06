@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Strona Glowna</title>
+    <title>Strona Główna</title>
     <link rel="stylesheet" href="/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -10,7 +10,7 @@
     <div class="card m-3 p-3 w-75 mx-auto">
         <nav class="navbar navbar-light bg-light m-1 p-1">
         <div class="card-body text-center">
-            <h2>InvoiceHelpSystem</h2>
+            <h2>Invoice Help System</h2>
         </div>
         </nav>
     </div>
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-light" href="#">Strona Glowna <span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn btn-light" href="/app/index.html">Strona Glowna <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-light" href="#">Dodaj Nowe Zlecenie</a>
@@ -56,6 +56,7 @@
                 <th scope="col">Nazwa Kontrahenta</th>
                 <th scope="col">Data Utworzenia Zlecenia</th>
                 <th scope="col">Opis</th>
+                <th scope="col">Opcje</th>
             </tr>
             </thead>
             <tbody>
@@ -64,6 +65,7 @@
                 <td data-th-text="${aol.contractor.contractorName}"></td>
                 <td data-th-text="${aol.order.issueDate}"></td>
                 <td data-th-text="${aol.order.description}"></td>
+                <td><a data-th-href="@{/app/orderDetails/{id}(id=${aol.accountingOrderId})}"><button type="button" class="btn btn-primary">Szczegóły</button></a></td>
             </tr>
             </tbody>
         </table>
