@@ -32,6 +32,12 @@ public class MainController {
         return "orderDetails.html";
     }
 
+    @GetMapping("/companySettings")
+    private String companySettings(){
+
+        return "companySettings.html";
+    }
+
     @GetMapping("/addNewOrder")
     private String newOrderForm(){
         return "newOrder.html";
