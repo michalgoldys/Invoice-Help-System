@@ -15,6 +15,9 @@ public class MainController {
     @Autowired
     AccountingOrderService accountingOrderService;
 
+    @Autowired
+    Company company;
+
     @GetMapping("/index")
     private String mainPage(Model model){
 
@@ -33,7 +36,9 @@ public class MainController {
     }
 
     @GetMapping("/companySettings")
-    private String companySettings(){
+    private String companySettings(Model model){
+
+        model.addAttribute("company", Company.getInstance());
 
         return "companySettings.html";
     }
