@@ -16,6 +16,8 @@ public class MainController {
     AccountingOrderService accountingOrderService;
 
     @Autowired
+    CompanySaveInterface companySaveInterface;
+    @Autowired
     Company company;
 
     @GetMapping("/index")
@@ -43,6 +45,17 @@ public class MainController {
         return "companySettings.html";
     }
 
+    @PostMapping("/companySettings")
+    private String companySettingsPost(Company company){
+
+        Company.getInstance().setCompanyCity(company.getCompanyCity());
+        Company.getInstance().setCompanyName(company.getCompanyName());
+        Company.getInstance().setCompanyPostalCode(company.getCompanyPostalCode());
+        Company.getInstance().setCompanyStreet(company.getCompanyStreet());
+        Company.getInstance().setCompanyTaxNumber(company.getCompanyTaxNumber());
+
+        return "redirect:/app/index";
+    }
     @GetMapping("/addNewOrder")
     private String newOrderForm(){
         return "newOrder.html";
