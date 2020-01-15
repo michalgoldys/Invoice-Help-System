@@ -62,12 +62,66 @@
             </blockquote>
         </div>
     </div>
+<form data-th-action="@{/app/companySettings.html}" data-th-method="POST" role="form" action="#">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Nazwa Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="*{company.companyName}" id="companyName" name="companyName">
+                </div>
+            </div>
+        </div>
+        <div class="row md-center w-100">
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Miasto Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="*{company.companyCity}" id="companyCity" name="companyCity">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Kod Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="*{company.companyPostalCode}" id="companyPostalCode" name="companyPostalCode">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Ulica Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="*{company.companyStreet}" id="companyStreet" name="companyStreet">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">NIP Zleceniodawcy:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="*{company.companyTaxNumber}"  id="companyTaxNumber" name="companyTaxNumber">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group mb-4 mx-auto">
+                    <button type="submit" class="btn btn-warning bt-lg">Zapisz Dane Firmy</button>
+                </div>
+            </div>
+    </div>
+    </div>
+</form>
 
-
-<div class="card m-3 p-3 w-75 mx-auto">
+    <div class="card m-3 p-3 w-75 mx-auto">
     <div class="badge badge-light mx-auto">
         Copyright © Michał Gołdys, 2020y.
     </div>
+</div>
+
 </div>
 
 <script src="/jquery/3.4.1/dist/jquery.slim.min.js"></script>
