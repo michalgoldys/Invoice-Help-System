@@ -1,16 +1,19 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @ToString
+@EqualsAndHashCode
 @Entity(name = "company")
+@Component
 public class Company {
 
-    private static Company companyInstance;
+    private static Company companyInstance = null;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,5 +39,4 @@ public class Company {
         }
         return companyInstance;
     }
-
 }
