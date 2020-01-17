@@ -68,7 +68,7 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Nazwa Zleceniodawcy:</span>
+                        <span class="input-group-text">Nazwa Firmy:</span>
                     </div>
                     <input type="text" class="form-control" data-th-value="*{company.companyName}" id="companyName" name="companyName">
                 </div>
@@ -78,7 +78,7 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Miasto Zleceniodawcy:</span>
+                        <span class="input-group-text">Miasto:</span>
                     </div>
                     <input type="text" class="form-control" data-th-value="*{company.companyCity}" id="companyCity" name="companyCity">
                 </div>
@@ -86,7 +86,7 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Kod Zleceniodawcy:</span>
+                        <span class="input-group-text">Kod Pocztowy:</span>
                     </div>
                     <input type="text" class="form-control" data-th-value="*{company.companyPostalCode}" id="companyPostalCode" name="companyPostalCode">
                 </div>
@@ -94,7 +94,7 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Ulica Zleceniodawcy:</span>
+                        <span class="input-group-text">Ulica:</span>
                     </div>
                     <input type="text" class="form-control" data-th-value="*{company.companyStreet}" id="companyStreet" name="companyStreet">
                 </div>
@@ -102,18 +102,20 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">NIP Zleceniodawcy:</span>
+                        <span class="input-group-text">NIP:</span>
                     </div>
                     <input type="text" class="form-control" data-th-value="*{company.companyTaxNumber}"  id="companyTaxNumber" name="companyTaxNumber">
                 </div>
             </div>
-            <div class="col">
-                <div class="input-group mb-4 mx-auto">
-                    <button type="submit" class="btn btn-warning bt-lg">Zapisz Dane Firmy</button>
-                </div>
-            </div>
     </div>
     </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-2">
+            <button type="submit" class="btn btn-warning bt-lg">Zapisz Dane Firmy</button>
+        </div>
+    </div>
+
 </form>
 
     <div class="card m-3 p-3 w-75 mx-auto">
