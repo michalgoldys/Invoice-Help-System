@@ -18,6 +18,10 @@ public class DatabaseLoader {
         return args ->{
 
             Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019", "testowy opis obiektu");
+            OrderDetails orderDetails = new OrderDetails(OrderMode.CONTIOUS);
+
+            orderDetails.setOrder(order);
+            order.setOrderDetails(orderDetails);
 
             Contractor contractor = new Contractor.Builder()
                     .setContractorStreet("Warszawska")
