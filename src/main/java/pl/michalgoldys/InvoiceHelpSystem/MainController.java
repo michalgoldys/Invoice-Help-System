@@ -16,9 +16,10 @@ public class MainController {
     AccountingOrderService accountingOrderService;
 
     @Autowired
-    CompanySaveInterface companySaveInterface;
-    @Autowired
     Company company;
+
+    @Autowired
+    ClosingOrderServiceImpl closingOrderServiceImpl;
 
     @GetMapping("/index")
     private String mainPage(Model model){
@@ -35,6 +36,14 @@ public class MainController {
         model.addAttribute("AccountingOrderObject", accountingOrderService.findById(id));
 
         return "orderDetails.html";
+    }
+
+    @PostMapping("/orderDetails/{id}")
+    private String orderDetailsClosing(@PathVariable long id){
+
+        closingOrderServiceImpl.close(id);
+
+        return "redirect:/app/index.html";
     }
 
     @GetMapping("/companySettings")
