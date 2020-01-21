@@ -9,7 +9,12 @@ import java.util.Objects;
 @Entity(name = "order_table")
 public class Order {
 
+    @Column(name = "order_type")
+    @Enumerated(value = EnumType.STRING)
     private OrderType orderType;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "order")
+    private OrderDetails orderDetails;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +26,15 @@ public class Order {
     private String issueDate;
     @Column(name ="description")
     private String description;
+
+    public OrderDetails getOrderDetails() {
+        return orderDetails;
+    }
+
+    public Order setOrderDetails(OrderDetails orderDetails) {
+        this.orderDetails = orderDetails;
+        return this;
+    }
 
     protected Order(){
 
