@@ -189,24 +189,28 @@
                     <input type="text" class="form-control" data-th-value="${AccountingOrderObject.contractorContactDetails.contactEmailAddress}" readonly>
                 </div>
             </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="orderMode">Powtarzalność:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.order.orderDetails.orderMode}" readonly>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-4 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="closeDate">Data Zakonczenia Obsługi:</span>
+                    </div>
+                    <input type="text" class="form-control" data-th-value="${AccountingOrderObject.order.orderDetails.closeDate}" readonly>
+                </div>
+            </div>
         </div>
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="isContinuous" disabled>
-                    <label class="custom-control-label" for="isContinuous" data-th-value="${AccountingOrderObject.order.isContinuous}" >Stałe zlecenie</label>
-                </div>
-            </div>
-            <div class="col-md-auto">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="isSingleTime" disabled>
-                    <label class="custom-control-label" for="isSingleTime" data-th-value="${AccountingOrderObject.order.isSingleTime}">Jednorazowe zlecenie</label>
-                </div>
-            </div>
-            <div class="col-md-auto">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="isActive" disabled>
-                        <label class="custom-control-label" for="isActive" data-th-value="${AccountingOrderObject.order.isActive}" >Zakończone</label>
+                        <input type="checkbox" class="custom-control-input" id="isClosed" data-th-checked="${AccountingOrderObject.order.orderDetails.isClosed}" disabled>
+                        <label class="custom-control-label" for="isClosed" name="isClosed">Zakończone</label>
                     </div>
             </div>
         </div>
@@ -225,7 +229,9 @@
                 <a data-th-href="@{/app/index}" class="btn btn-primary" role="button">Powrót Na Stronę Główną</a>
             </div>
             <div class="col-2">
-                <button type="button" class="btn btn-success">Zakończ Obsługę Zlecenia</button>
+                <form data-th-action="@{/app/orderDetails/{id}(id=${AccountingOrderObject.accountingOrderId})}" data-th-method="POST" role="form" action="#">
+                <button type="submit" class="btn btn-success">Zakończ Obsługę Zlecenia</button>
+                </form>
             </div>
         </div>
     </div>
