@@ -16,10 +16,10 @@ public class MainController {
     AccountingOrderService accountingOrderService;
 
     @Autowired
-    Company company;
+    ClosingOrderServiceImpl closingOrderServiceImpl;
 
     @Autowired
-    ClosingOrderServiceImpl closingOrderServiceImpl;
+    CompanyService companyService;
 
     @GetMapping("/index")
     private String mainPage(Model model){
@@ -49,7 +49,7 @@ public class MainController {
     @GetMapping("/companySettings")
     private String companySettings(Model model){
 
-        model.addAttribute("company", Company.getInstance());
+        model.addAttribute("company", companyService.companyGetterService());
 
         return "companySettings.html";
     }
@@ -57,11 +57,7 @@ public class MainController {
     @PostMapping("/companySettings")
     private String companySettingsPost(Company company){
 
-        Company.getInstance().setCompanyCity(company.getCompanyCity());
-        Company.getInstance().setCompanyName(company.getCompanyName());
-        Company.getInstance().setCompanyPostalCode(company.getCompanyPostalCode());
-        Company.getInstance().setCompanyStreet(company.getCompanyStreet());
-        Company.getInstance().setCompanyTaxNumber(company.getCompanyTaxNumber());
+        companyService.companySaveService(company);
 
         return "redirect:/app/index";
     }
