@@ -16,7 +16,6 @@ public class Company {
     private static Company companyInstance = null;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long companyId;
 
     @Column(name = "company_name")
