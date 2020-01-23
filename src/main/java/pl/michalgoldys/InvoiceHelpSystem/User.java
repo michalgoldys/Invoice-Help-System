@@ -1,43 +1,65 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
-import java.util.Objects;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity(name="user")
 public class User {
 
-    private final UserType userType;
-    private String userName;
-    private String userPassword;
+    @Id
+    @Column(name = "username", unique = true, nullable = false)
+    private String username;
 
-    public UserType getUserType() {
-        return userType;
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    @Column(name ="enabled", nullable = false)
+    private Boolean enabled;
+
+    @Autowired
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<UserRoles> userRoles;
+
+    private User(){
     }
 
-    public User(UserType userType, String userName, String userPassword) {
-        this.userType = userType;
-        this.userName = userName;
-        this.userPassword = userPassword;
+    public User(String username, String password, Boolean enabled) {
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userType=" + userType +
-                ", userName='" + userName + '\'' +
-                '}';
+    public String getUsername() {
+        return username;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return userType == user.userType &&
-                Objects.equals(userName, user.userName);
+    public User setUsername(String username) {
+        this.username = username;
+        return this;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(userType, userName);
+    public User setPassword(String password) {
+        this.password = password;
+        return this;
     }
 
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public User setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    public List<UserRoles> getUserRoles() {
+        return userRoles;
+    }
+
+    public User setUserRoles(List<UserRoles> userRoles) {
+        this.userRoles = userRoles;
+        return this;
+    }
 }
