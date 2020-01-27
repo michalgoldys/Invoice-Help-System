@@ -1,5 +1,6 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Slf4j
 @Controller
 @RequestMapping("/app/")
 public class MainController {
@@ -19,12 +21,15 @@ public class MainController {
     ClosingOrderServiceImpl closingOrderServiceImpl;
 
     @Autowired
+    PrincipalDetailsUsernameService principalDetailsUsernameService;
+    @Autowired
     CompanyService companyService;
 
     @GetMapping("/index")
     private String mainPage(Model model){
 
         model.addAttribute("AccountingOrderList", accountingOrderService.findAll());
+        model.addAttribute("currentUser", principalDetailsUsernameService.getCurrentUsername());
 
         return "index.html";
     }
