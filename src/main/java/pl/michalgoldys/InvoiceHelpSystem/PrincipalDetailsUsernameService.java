@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class PrincipalDetailsService implements PrincipalDetails {
+public class PrincipalDetailsUsernameService implements PrincipalDetails {
 
     @Override
     public String getCurrentUsername() {
