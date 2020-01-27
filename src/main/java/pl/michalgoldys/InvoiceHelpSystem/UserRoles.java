@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class UserRoles {
 
     @Id
-    @Column(name = "authority")
+    @Column(name = "authority", length = 30)
     private String authority;
 
     @Autowired
