@@ -9,7 +9,7 @@ import java.util.List;
 public class User {
 
     @Id
-    @Column(name = "username", unique = true, nullable = false)
+    @Column(name = "username", unique = true, nullable = false ,length = 30)
     private String username;
 
     @Column(name = "password", nullable = false)
