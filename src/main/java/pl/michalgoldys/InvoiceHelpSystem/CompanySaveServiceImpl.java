@@ -9,8 +9,14 @@ public class CompanySaveServiceImpl implements GenericDatabaseSaveInterface<Comp
     @Autowired
     CompanyDAO companyDAO;
 
+    private final static Long ID = 1L;
+
     @Override
     public void save(Company company) {
+        if(company.getCompanyId() != ID)
+        {
+            company.setCompanyId(ID);
+        }
         companyDAO.save(company);
     }
 }
