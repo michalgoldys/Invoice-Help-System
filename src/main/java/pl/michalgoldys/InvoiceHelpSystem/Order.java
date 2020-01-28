@@ -47,6 +47,14 @@ public class Order {
         this.description = description;
     }
 
+    public Order(OrderType orderType, OrderDetails orderDetails, Double amount, String issueDate, String description) {
+        this.orderType = orderType;
+        this.orderDetails = orderDetails;
+        this.amount = amount;
+        this.issueDate = issueDate;
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
