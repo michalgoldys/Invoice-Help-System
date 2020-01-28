@@ -3,12 +3,13 @@ package pl.michalgoldys.InvoiceHelpSystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Component
 public class ClosingOrderServiceImpl implements ClosingOrder {
+
+    @Autowired
+    TimeService timeService;
 
     @Autowired
     AccountingOrderService accountingOrderService;
@@ -27,11 +28,7 @@ public class ClosingOrderServiceImpl implements ClosingOrder {
     }
 
     private String getCurrentTime(){
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        LocalDateTime localDateTime = LocalDateTime.now();
-
-        return localDateTime.format(formatter);
+        return timeService.getTime();
     }
 
     private Boolean isValidForClosing(AccountingOrder accountingOrder) {
