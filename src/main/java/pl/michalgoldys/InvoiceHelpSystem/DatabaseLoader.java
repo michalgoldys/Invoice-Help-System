@@ -34,7 +34,7 @@ public class DatabaseLoader {
                 log.info("Creating example objects..");
 
                 Order order = new Order(OrderType.INVOICE, 400.00d,"01.01.2019", "testowy opis obiektu");
-                OrderDetails orderDetails = new OrderDetails(OrderMode.CONTIOUS);
+                OrderDetails orderDetails = new OrderDetails(OrderMode.CONTINUOUS);
 
                 orderDetails.setOrder(order);
                 order.setOrderDetails(orderDetails);
