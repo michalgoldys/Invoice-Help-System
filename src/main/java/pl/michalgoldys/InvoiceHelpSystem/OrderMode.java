@@ -2,5 +2,5 @@ package pl.michalgoldys.InvoiceHelpSystem;
 
 public enum OrderMode {
 
-    SINGLE_TIME, CONTIOUS;
+    SINGLE_TIME, CONTINUOUS;
 }
