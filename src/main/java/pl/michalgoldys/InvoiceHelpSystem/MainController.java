@@ -39,6 +39,7 @@ public class MainController {
                                 Model model){
 
         model.addAttribute("AccountingOrderObject", accountingOrderService.findById(id));
+        model.addAttribute("currentUser", principalDetailsUsernameService.getCurrentUsername());
 
         return "orderDetails.html";
     }
@@ -55,6 +56,7 @@ public class MainController {
     private String companySettings(Model model){
 
         model.addAttribute("company", companyService.companyGetterService());
+        model.addAttribute("currentUser", principalDetailsUsernameService.getCurrentUsername());
 
         return "companySettings.html";
     }
