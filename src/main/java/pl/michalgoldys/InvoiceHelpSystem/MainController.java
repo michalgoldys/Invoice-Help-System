@@ -22,6 +22,7 @@ public class MainController {
 
     @Autowired
     PrincipalDetailsUsernameService principalDetailsUsernameService;
+
     @Autowired
     CompanyService companyService;
 
@@ -68,13 +69,16 @@ public class MainController {
 
         return "redirect:/app/index";
     }
-    @GetMapping("/addNewOrder")
-    private String newOrderForm(){
-        return "newOrder.html";
+    @GetMapping("/neworder")
+    private String newOrderForm(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails, OrderDetails orderDetails){
+
+        log.info("Order new object: " + order.toString());
+
+        return "neworder.html";
     }
 
-    @PostMapping("addNewOrder")
-    private String newOrderCreation(AccountingOrder accountingOrder){
+    @PostMapping("neworder")
+    private String newOrderCreation(){
 
         return "redirect:/index.html";
     }
