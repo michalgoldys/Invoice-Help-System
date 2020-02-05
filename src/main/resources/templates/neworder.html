@@ -41,7 +41,7 @@
                 <li class="nav-item">
                     <a class="nav-link btn btn-light" href="/app/index.html">Strona Główna</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link btn btn-light" href="/app/neworder.html">Dodaj Nowe Zlecenie<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -72,11 +72,12 @@
 
     <nav class="navbar navbar-light bg-light m-1 p-1 mx-auto w-100 border rounded ">
         <div class="mx-auto">
-            <h6>Nowe Zlecenie</h6>
+            <h6>Dane Firmy</h6>
         </div>
     </nav>
 
     <div class="container-fluid">
+        <div class="card m-2 p-2 mx-auto ">
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
                 <div class="input-group mb-3 text-center">
@@ -154,6 +155,7 @@
                 </div>
             </div>
         </div>
+        </div>
         <div class="row justify-content-md-center">
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
@@ -211,6 +213,8 @@
                     <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactEmailAddress}">
                 </div>
             </div>
+        </div>
+
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
@@ -222,22 +226,6 @@
                             data-th-text="${OrderMode}">
                     </option>
                         </select>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-4 text-center">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="closeDate">Data Zakonczenia Obsługi:</span>
-                    </div>
-                    <input type="text" class="form-control" data-th-value="${orderDetails.closeDate}" readonly>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-md-center">
-            <div class="col-md-auto">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="isClosed" data-th-checked="${orderDetails.isClosed}" disabled>
-                    <label class="custom-control-label" for="isClosed" name="isClosed">Zakończone</label>
                 </div>
             </div>
         </div>
