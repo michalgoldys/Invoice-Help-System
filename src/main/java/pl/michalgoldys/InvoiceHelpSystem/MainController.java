@@ -70,16 +70,23 @@ public class MainController {
         return "redirect:/app/index";
     }
     @GetMapping("/neworder")
-    private String newOrderForm(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails, OrderDetails orderDetails){
+    private String newOrderForm(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails, OrderDetails orderDetails, Model model){
 
-        log.info("Order new object: " + order.toString());
+        model.addAttribute("currentUser", principalDetailsUsernameService.getCurrentUsername());
 
         return "neworder.html";
     }
 
     @PostMapping("neworder")
-    private String newOrderCreation(){
+    private String newOrderCreation(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails, OrderDetails orderDetails){
 
-        return "redirect:/index.html";
+        order.setOrderDetails(orderDetails);
+        orderDetails.setOrder(order);
+
+        AccountingOrder accountingOrder = new AccountingOrder(order, contractor, contractorContactDetails);
+
+        log.info("Accounting Order new Object: " + accountingOrder.toString());
+
+        return "redirect:/app/index";
     }
 }
