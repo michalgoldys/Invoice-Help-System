@@ -8,8 +8,8 @@ import java.util.Collection;
 public interface AccountingOrderDAO extends Repository<AccountingOrder, Long> {
 
     Collection<AccountingOrder> findAll();
-    AccountingOrder delete(AccountingOrder accountingOrder);
-    AccountingOrder save(AccountingOrder accountingOrder);
+    void delete(AccountingOrder accountingOrder);
+    void save(AccountingOrder accountingOrder);
     AccountingOrder findById(Long accountingOrderId);
-    AccountingOrder deleteById(Long id);
+    void deleteById(Long id);
 }
