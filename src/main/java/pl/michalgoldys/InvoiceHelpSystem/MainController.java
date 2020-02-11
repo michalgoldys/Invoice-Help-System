@@ -26,6 +26,9 @@ public class MainController {
     @Autowired
     CompanyService companyService;
 
+    @Autowired
+    AccountingOrderSaveService accountingOrderSaveService;
+
     @GetMapping("/index")
     private String mainPage(Model model){
 
@@ -77,15 +80,17 @@ public class MainController {
         return "neworder.html";
     }
 
-    @PostMapping("neworder")
+    @PostMapping("/neworder")
     private String newOrderCreation(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails, OrderDetails orderDetails){
 
         order.setOrderDetails(orderDetails);
         orderDetails.setOrder(order);
 
-        AccountingOrder accountingOrder = new AccountingOrder(order, contractor, contractorContactDetails);
+        log.info("Object from spring auto data binding: " + order.toString() + contractor.toString() + contractorContactDetails.toString() + orderDetails.toString());
 
+        AccountingOrder accountingOrder = new AccountingOrder(order, contractor, contractorContactDetails);
         log.info("Accounting Order new Object: " + accountingOrder.toString());
+        accountingOrderSaveService.save(accountingOrder);
 
         return "redirect:/app/index";
     }
