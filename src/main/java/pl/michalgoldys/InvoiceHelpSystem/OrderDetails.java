@@ -2,9 +2,11 @@ package pl.michalgoldys.InvoiceHelpSystem;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@ToString
 @Entity(name="order_details")
 public class OrderDetails {
 
