@@ -7,11 +7,8 @@
     <script src="/jquery/3.4.1/dist/jquery.slim.min.js"></script>
 
     <script src="/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-    <script src="/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.pl.min.js"></script>
 
     <link rel="stylesheet" href="/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
 
 </head>
 <body>
@@ -20,7 +17,7 @@
     <div class="col-2 text-center">
         <div class="border border-dark rounded">
             <a>Zalogowany jako: </a>
-            <a data-th-text="${currentUser}"></a>
+            <a data-th-text="*{currentUser}"></a>
         </div>
     </div>
 </div>
@@ -76,18 +73,21 @@
         </div>
     </nav>
 
+    <form data-th-action="@{/app/neworder.html}" data-th-method="POST" role="form" action="#">
     <div class="container-fluid">
         <div class="card m-2 p-2 mx-auto ">
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
                 <div class="input-group mb-3 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="orderType">Typ Zlecenia:</span>
+                        <span class="input-group-text">Typ Zlecenia:</span>
                     </div>
                     <select>
-                        <option data-th-each="OrderType : ${T(pl.michalgoldys.InvoiceHelpSystem.OrderType).values()}"
-                                data-th-value="${order.OrderType}"
-                                data-th-text="${OrderType}">
+                        <option data-th-each="OrderType : *{T(pl.michalgoldys.InvoiceHelpSystem.OrderType).values()}"
+                                data-th-value="*{order.orderType}"
+                                data-th-text="*{OrderType}"
+                        id="orderType"
+                        name="OrderType">
                         </option>
                     </select>
                 </div>
@@ -95,9 +95,9 @@
             <div class="col-md-auto">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="issueDate">Data Zlecenia:</span>
+                        <span class="input-group-text">Data Zlecenia:</span>
                     </div>
-                    <input type="text" class="form-control issue-date" data-th-value="${order.issueDate}" readonly>
+                    <input type="text" class="form-control issue-date" data-th-value="*{order.issueDate}" id="issueDate" name="issueDate" readonly>
                 </div>
             </div>
         </div>
@@ -105,9 +105,9 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contractorName">Nazwa Zleceniodawcy:</span>
+                        <span class="input-group-text">Nazwa Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractor.contractorName}">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorName}" name="contractorName" id="contractorName">
                 </div>
             </div>
         </div>
@@ -115,33 +115,33 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contractorCity">Miasto Zleceniodawcy:</span>
+                        <span class="input-group-text">Miasto Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractor.contractorCity}">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorCity}" name="contractorCity" id="contractorCity">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contractorPostalCode">Kod Zleceniodawcy:</span>
+                        <span class="input-group-text">Kod Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractor.contractorPostalCode}">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorPostalCode}" name="contractorPostalCode" id="contractorPostalCode">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contractorStreet">Ulica Zleceniodawcy:</span>
+                        <span class="input-group-text">Ulica Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractor.contractorStreet}">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorStreet}" name="contractorStreet" id="contractorStreet">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contractorNip">NIP Zleceniodawcy:</span>
+                        <span class="input-group-text">NIP Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractor.contractorTaxNumber}">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorTaxNumber}" name="contractorTaxNumber" id="contractorTaxNumber">
                 </div>
             </div>
         </div>
@@ -149,9 +149,9 @@
             <div class="col-md-auto">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="orderAmount">Kwota Zlecenia:</span>
+                        <span class="input-group-text">Kwota Zlecenia:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${order.amount}">
+                    <input type="text" class="form-control" data-th-value="*{order.amount}" name="amount" id="amount">
                 </div>
             </div>
         </div>
@@ -160,57 +160,57 @@
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contactPersonName">Imię osoby kontaktowej:</span>
+                        <span class="input-group-text">Imię osoby kontaktowej:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactPersonName}">
+                    <input type="text" class="form-control" data-th-value="*{contractorContactDetails.contactPersonName}" name="contactPersonName" id="contactPersonName">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contactPersonSurname">Nazwisko osoby kontaktowej:</span>
+                        <span class="input-group-text">Nazwisko osoby kontaktowej:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactPersonSurname}">
+                    <input type="text" class="form-control" data-th-value="*{contractorContactDetails.contactPersonSurname}" name="contactPersonSurname" id="contactPersonSurname">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contactCity">Miasto do Korespondencji:</span>
+                        <span class="input-group-text">Miasto do Korespondencji:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactCity}">
+                    <input type="text" class="form-control" data-th-value="*{contractorContactDetails.contactCity}" name="contactCity" id="contactCity">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contactPostalCode">Kod pocztowy do Korespondencji:</span>
+                        <span class="input-group-text">Kod pocztowy do Korespondencji:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactPostalCode}">
+                    <input type="text" class="form-control" data-th-value="*{contractorContactDetails.contactPostalCode}" name="contactPostalCode" id="contactPostalCode">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contactStreet">Ulica do Korespondencji:</span>
+                        <span class="input-group-text">Ulica do Korespondencji:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactStreet}">
+                    <input type="text" class="form-control" data-th-value="*{contractorContactDetails.contactStreet}" name="contactStreet" id="contactStreet">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contactMobile">Telefon do Korespondencji:</span>
+                        <span class="input-group-text">Telefon do Korespondencji:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactMobile}">
+                    <input type="text" class="form-control" data-th-value="*{contractorContactDetails.contactMobile}" id="contactMobile" name="contactMobile">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="contactEmailAddress">Email do Korespondencji:</span>
+                        <span class="input-group-text">Email do Korespondencji:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="${contractorContactDetails.contactEmailAddress}">
+                    <input type="text" class="form-control" data-th-value="*{contractorContactDetails.contactEmailAddress}" id="contactEmailAddress" name="contactEmailAddress">
                 </div>
             </div>
         </div>
@@ -218,12 +218,14 @@
             <div class="col-3">
                 <div class="input-group mb-4 text-center">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="orderMode">Powtarzalność:</span>
+                        <span class="input-group-text">Powtarzalność:</span>
                     </div>
                         <select>
-                    <option data-th-each="OrderMode : ${T(pl.michalgoldys.InvoiceHelpSystem.OrderMode).values()}"
-                            data-th-value="${orderDetails.orderMode}"
-                            data-th-text="${OrderMode}">
+                    <option data-th-each="OrderMode : *{T(pl.michalgoldys.InvoiceHelpSystem.OrderMode).values()}"
+                            data-th-value="*{orderDetails.orderMode}"
+                            data-th-text="*{OrderMode}"
+                    name="orderMode"
+                    id="orderMode">
                     </option>
                         </select>
                 </div>
@@ -236,7 +238,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Opis Zlecenia:</span>
                     </div>
-                    <textarea class="form-control" aria-label="description" data-th-field="${order.description}"></textarea>
+                    <textarea class="form-control" aria-label="description" data-th-value="*{order.description}" name="description" id="description"></textarea>
                 </div>
             </div>
         </div>
@@ -245,13 +247,11 @@
                 <a data-th-href="@{/app/index}" class="btn btn-primary" role="button">Powrót Na Stronę Główną</a>
             </div>
             <div class="col-2">
-                <form data-th-action="@{/app/neworder}" data-th-method="POST" role="form" action="#">
                     <button type="submit" class="btn btn-success">Dodaj Nowe Zlecenie</button>
-                </form>
             </div>
         </div>
     </div>
-
+    </form>
 </div>
 
 <div class="card m-3 p-3 w-75 mx-auto">
