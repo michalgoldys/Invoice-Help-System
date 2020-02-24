@@ -28,11 +28,82 @@ public class ContractorContactDetails {
     @Column(name = "contact_mobile")
     private String contactMobile;
 
-    protected ContractorContactDetails(){
-
+    public Long getContractorContactDetailsId() {
+        return contractorContactDetailsId;
     }
 
-    private ContractorContactDetails(String contactEmailAddress, String contactStreet, String contactCity, String contactPostalCode, String contactPersonName, String contactPersonSurname, String contactMobile) {
+    public ContractorContactDetails setContractorContactDetailsId(Long contractorContactDetailsId) {
+        this.contractorContactDetailsId = contractorContactDetailsId;
+        return this;
+    }
+
+    public String getContactEmailAddress() {
+        return contactEmailAddress;
+    }
+
+    public ContractorContactDetails setContactEmailAddress(String contactEmailAddress) {
+        this.contactEmailAddress = contactEmailAddress;
+        return this;
+    }
+
+    public String getContactStreet() {
+        return contactStreet;
+    }
+
+    public ContractorContactDetails setContactStreet(String contactStreet) {
+        this.contactStreet = contactStreet;
+        return this;
+    }
+
+    public String getContactCity() {
+        return contactCity;
+    }
+
+    public ContractorContactDetails setContactCity(String contactCity) {
+        this.contactCity = contactCity;
+        return this;
+    }
+
+    public String getContactPostalCode() {
+        return contactPostalCode;
+    }
+
+    public ContractorContactDetails setContactPostalCode(String contactPostalCode) {
+        this.contactPostalCode = contactPostalCode;
+        return this;
+    }
+
+    public String getContactPersonName() {
+        return contactPersonName;
+    }
+
+    public ContractorContactDetails setContactPersonName(String contactPersonName) {
+        this.contactPersonName = contactPersonName;
+        return this;
+    }
+
+    public String getContactPersonSurname() {
+        return contactPersonSurname;
+    }
+
+    public ContractorContactDetails setContactPersonSurname(String contactPersonSurname) {
+        this.contactPersonSurname = contactPersonSurname;
+        return this;
+    }
+
+    public String getContactMobile() {
+        return contactMobile;
+    }
+
+    public ContractorContactDetails setContactMobile(String contactMobile) {
+        this.contactMobile = contactMobile;
+        return this;
+    }
+
+    protected ContractorContactDetails(){
+    }
+
+    public ContractorContactDetails(String contactEmailAddress, String contactStreet, String contactCity, String contactPostalCode, String contactPersonName, String contactPersonSurname, String contactMobile) {
         this.contactEmailAddress = contactEmailAddress;
         this.contactStreet = contactStreet;
         this.contactCity = contactCity;
@@ -72,55 +143,5 @@ public class ContractorContactDetails {
     @Override
     public int hashCode() {
         return Objects.hash(contactEmailAddress, contactStreet, contactCity, contactPostalCode, contactPersonName, contactPersonSurname, contactMobile);
-    }
-
-    public static class Builder {
-
-        private String contactEmailAddress;
-        private String contactStreet;
-        private String contactCity;
-        private String contactPostalCode;
-        private String contactPersonName;
-        private String contactPersonSurname;
-        private String contactMobile;
-
-        public Builder setContactEmailAddress(String contactEmailAddress) {
-            this.contactEmailAddress = contactEmailAddress;
-            return this;
-        }
-
-        public Builder setContactStreet(String contactStreet) {
-            this.contactStreet = contactStreet;
-            return this;
-        }
-
-        public Builder setContactCity(String contactCity) {
-            this.contactCity = contactCity;
-            return this;
-        }
-
-        public Builder setContactPostalCode(String contactPostalCode) {
-            this.contactPostalCode = contactPostalCode;
-            return this;
-        }
-
-        public Builder setContactPersonName(String contactPersonName) {
-            this.contactPersonName = contactPersonName;
-            return this;
-        }
-
-        public Builder setContactPersonSurname(String contactPersonSurname) {
-            this.contactPersonSurname = contactPersonSurname;
-            return this;
-        }
-
-        public Builder setContactMobile(String contactMobile) {
-            this.contactMobile = contactMobile;
-            return this;
-        }
-
-        public ContractorContactDetails build(){
-            return new ContractorContactDetails(contactEmailAddress, contactStreet, contactCity, contactPostalCode, contactPersonName, contactPersonSurname, contactMobile);
-        }
     }
 }
