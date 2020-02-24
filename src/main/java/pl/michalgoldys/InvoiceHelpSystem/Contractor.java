@@ -23,11 +23,64 @@ public class Contractor {
     @Column(name = "contractor_tax_number")
     private String contractorTaxNumber;
 
-    protected Contractor(){
-
+    public Long getContractorId() {
+        return contractorId;
     }
 
-    private Contractor(String contractorName, String contractorStreet, String contractorCity, String contractorPostalCode, String contractorTaxNumber) {
+    public Contractor setContractorId(Long contractorId) {
+        this.contractorId = contractorId;
+        return this;
+    }
+
+    public String getContractorName() {
+        return contractorName;
+    }
+
+    public Contractor setContractorName(String contractorName) {
+        this.contractorName = contractorName;
+        return this;
+    }
+
+    public String getContractorStreet() {
+        return contractorStreet;
+    }
+
+    public Contractor setContractorStreet(String contractorStreet) {
+        this.contractorStreet = contractorStreet;
+        return this;
+    }
+
+    public String getContractorCity() {
+        return contractorCity;
+    }
+
+    public Contractor setContractorCity(String contractorCity) {
+        this.contractorCity = contractorCity;
+        return this;
+    }
+
+    public String getContractorPostalCode() {
+        return contractorPostalCode;
+    }
+
+    public Contractor setContractorPostalCode(String contractorPostalCode) {
+        this.contractorPostalCode = contractorPostalCode;
+        return this;
+    }
+
+    public String getContractorTaxNumber() {
+        return contractorTaxNumber;
+    }
+
+    public Contractor setContractorTaxNumber(String contractorTaxNumber) {
+        this.contractorTaxNumber = contractorTaxNumber;
+        return this;
+    }
+
+    protected Contractor(){
+    }
+
+    public Contractor(String contractorName, String contractorStreet, String contractorCity, String contractorPostalCode, String contractorTaxNumber) {
         this.contractorName = contractorName;
         this.contractorStreet = contractorStreet;
         this.contractorCity = contractorCity;
@@ -44,43 +97,5 @@ public class Contractor {
                 ", contractorPostalCode='" + contractorPostalCode + '\'' +
                 ", contractorTaxNumber='" + contractorTaxNumber + '\'' +
                 '}';
-    }
-
-    public static class Builder {
-
-        private String contractorName;
-        private String contractorStreet;
-        private String contractorCity;
-        private String contractorPostalCode;
-        private String contractorTaxNumber;
-
-        public Builder setContractorName(String contractorName) {
-            this.contractorName = contractorName;
-            return this;
-        }
-
-        public Builder setContractorStreet(String contractorStreet) {
-            this.contractorStreet = contractorStreet;
-            return this;
-        }
-
-        public Builder setContractorCity(String contractorCity) {
-            this.contractorCity = contractorCity;
-            return this;
-        }
-
-        public Builder setContractorPostalCode(String contractorPostalCode) {
-            this.contractorPostalCode = contractorPostalCode;
-            return this;
-        }
-
-        public Builder setContractorTaxNumber(String contractorTaxNumber) {
-            this.contractorTaxNumber = contractorTaxNumber;
-            return this;
-        }
-
-        public Contractor build(){
-            return new Contractor(contractorName, contractorStreet, contractorCity, contractorPostalCode, contractorTaxNumber);
-        }
     }
 }
