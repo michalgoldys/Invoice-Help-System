@@ -1,11 +1,8 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
-import lombok.Getter;
-
 import javax.persistence.*;
 import java.util.Objects;
 
-@Getter
 @Entity(name = "accounting_order")
 public class AccountingOrder {
 
@@ -22,8 +19,43 @@ public class AccountingOrder {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private ContractorContactDetails contractorContactDetails;
 
-    protected AccountingOrder(){
+    public Long getAccountingOrderId() {
+        return accountingOrderId;
+    }
 
+    public AccountingOrder setAccountingOrderId(Long accountingOrderId) {
+        this.accountingOrderId = accountingOrderId;
+        return this;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public AccountingOrder setOrder(Order order) {
+        this.order = order;
+        return this;
+    }
+
+    public Contractor getContractor() {
+        return contractor;
+    }
+
+    public AccountingOrder setContractor(Contractor contractor) {
+        this.contractor = contractor;
+        return this;
+    }
+
+    public ContractorContactDetails getContractorContactDetails() {
+        return contractorContactDetails;
+    }
+
+    public AccountingOrder setContractorContactDetails(ContractorContactDetails contractorContactDetails) {
+        this.contractorContactDetails = contractorContactDetails;
+        return this;
+    }
+
+    protected AccountingOrder(){
     }
 
     public AccountingOrder(Order order, Contractor contractor, ContractorContactDetails contractorContactDetails) {
