@@ -19,15 +19,14 @@ public class ContractorContactDetailsServiceTest {
     @Test
     public void shouldSaveWithoutException(){
 
-        ContractorContactDetails contractorContactDetails = new ContractorContactDetails.Builder()
-                .setContactPersonName("M")
-                .setContactPersonSurname("G")
-                .setContactMobile("123456789")
-                .setContactStreet("Ogrodnicza")
-                .setContactCity("Warszawa")
-                .setContactPostalCode("00-000")
-                .setContactEmailAddress("exmaple@example.com")
-                .build();
+        ContractorContactDetails contractorContactDetails = new ContractorContactDetails();
+        contractorContactDetails.setContactPersonName("M");
+        contractorContactDetails.setContactPersonSurname("G");
+        contractorContactDetails.setContactMobile("123456789");
+        contractorContactDetails.setContactStreet("Ogrodnicza");
+        contractorContactDetails.setContactCity("Warszawa");
+        contractorContactDetails.setContactPostalCode("00-000");
+        contractorContactDetails.setContactEmailAddress("exmaple@example.com");
 
         contractorContactDetailsService.save(contractorContactDetails);
     }
@@ -35,15 +34,14 @@ public class ContractorContactDetailsServiceTest {
     @Test
     public void shouldGetAllObjectsWithoutException(){
 
-        ContractorContactDetails contractorContactDetails = new ContractorContactDetails.Builder()
-                .setContactPersonName("M")
-                .setContactPersonSurname("G")
-                .setContactMobile("123456789")
-                .setContactStreet("Ogrodnicza")
-                .setContactCity("Warszawa")
-                .setContactPostalCode("00-000")
-                .setContactEmailAddress("exmaple@example.com")
-                .build();
+        ContractorContactDetails contractorContactDetails = new ContractorContactDetails();
+        contractorContactDetails.setContactPersonName("M");
+        contractorContactDetails.setContactPersonSurname("G");
+        contractorContactDetails.setContactMobile("123456789");
+        contractorContactDetails.setContactStreet("Ogrodnicza");
+        contractorContactDetails.setContactCity("Warszawa");
+        contractorContactDetails.setContactPostalCode("00-000");
+        contractorContactDetails.setContactEmailAddress("exmaple@example.com");
 
         contractorContactDetailsService.save(contractorContactDetails);
 
@@ -58,15 +56,14 @@ public class ContractorContactDetailsServiceTest {
     @Test
     public void shouldDeleteByObjectWithoutException(){
 
-        ContractorContactDetails contractorContactDetails = new ContractorContactDetails.Builder()
-                .setContactPersonName("M")
-                .setContactPersonSurname("G")
-                .setContactMobile("123456789")
-                .setContactStreet("Ogrodnicza")
-                .setContactCity("Warszawa")
-                .setContactPostalCode("00-000")
-                .setContactEmailAddress("exmaple@example.com")
-                .build();
+        ContractorContactDetails contractorContactDetails = new ContractorContactDetails();
+        contractorContactDetails.setContactPersonName("M");
+        contractorContactDetails.setContactPersonSurname("G");
+        contractorContactDetails.setContactMobile("123456789");
+        contractorContactDetails.setContactStreet("Ogrodnicza");
+        contractorContactDetails.setContactCity("Warszawa");
+        contractorContactDetails.setContactPostalCode("00-000");
+        contractorContactDetails.setContactEmailAddress("exmaple@example.com");
 
         contractorContactDetailsService.save(contractorContactDetails);
 
@@ -76,15 +73,14 @@ public class ContractorContactDetailsServiceTest {
     @Test
     public void shouldDeleteByIdWithoutException(){
 
-        ContractorContactDetails contractorContactDetails = new ContractorContactDetails.Builder()
-                .setContactPersonName("M")
-                .setContactPersonSurname("G")
-                .setContactMobile("123456789")
-                .setContactStreet("Ogrodnicza")
-                .setContactCity("Warszawa")
-                .setContactPostalCode("00-000")
-                .setContactEmailAddress("exmaple@example.com")
-                .build();
+        ContractorContactDetails contractorContactDetails = new ContractorContactDetails();
+        contractorContactDetails.setContactPersonName("M");
+        contractorContactDetails.setContactPersonSurname("G");
+        contractorContactDetails.setContactMobile("123456789");
+        contractorContactDetails.setContactStreet("Ogrodnicza");
+        contractorContactDetails.setContactCity("Warszawa");
+        contractorContactDetails.setContactPostalCode("00-000");
+        contractorContactDetails.setContactEmailAddress("exmaple@example.com");
 
         contractorContactDetailsService.save(contractorContactDetails);
 
@@ -101,15 +97,14 @@ public class ContractorContactDetailsServiceTest {
     @Test
     public void shouldGetByIdWithoutException(){
 
-        ContractorContactDetails contractorContactDetails = new ContractorContactDetails.Builder()
-                .setContactPersonName("M")
-                .setContactPersonSurname("G")
-                .setContactMobile("123456789")
-                .setContactStreet("Ogrodnicza")
-                .setContactCity("Warszawa")
-                .setContactPostalCode("00-000")
-                .setContactEmailAddress("exmaple@example.com")
-                .build();
+        ContractorContactDetails contractorContactDetails = new ContractorContactDetails();
+        contractorContactDetails.setContactPersonName("M");
+        contractorContactDetails.setContactPersonSurname("G");
+        contractorContactDetails.setContactMobile("123456789");
+        contractorContactDetails.setContactStreet("Ogrodnicza");
+        contractorContactDetails.setContactCity("Warszawa");
+        contractorContactDetails.setContactPostalCode("00-000");
+        contractorContactDetails.setContactEmailAddress("exmaple@example.com");
 
         contractorContactDetailsService.save(contractorContactDetails);
 

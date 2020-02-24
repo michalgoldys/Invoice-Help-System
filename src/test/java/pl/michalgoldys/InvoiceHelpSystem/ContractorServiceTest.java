@@ -19,26 +19,26 @@ public class ContractorServiceTest {
     @Test
     public void shouldSaveWithoutException(){
 
-        Contractor contractor = new Contractor.Builder()
-                .setContractorStreet("Warszawska")
-                .setContractorCity("Warszawa")
-                .setContractorPostalCode("01-234")
-                .setContractorName("EXAMPLE")
-                .setContractorTaxNumber("1231232121")
-                .build();
+        Contractor contractor = new Contractor();
+        contractor.setContractorStreet("Warszawska");
+        contractor.setContractorCity("Warszawa");
+        contractor.setContractorPostalCode("01-234");
+        contractor.setContractorName("EXAMPLE");
+        contractor.setContractorTaxNumber("1231232121");
+
         contractorService.save(contractor);
     }
 
     @Test
     public void shouldGetAllObjectsWithoutException(){
 
-        Contractor contractor = new Contractor.Builder()
-                .setContractorStreet("Warszawska")
-                .setContractorCity("Warszawa")
-                .setContractorPostalCode("01-234")
-                .setContractorName("EXAMPLE")
-                .setContractorTaxNumber("1231232121")
-                .build();
+        Contractor contractor = new Contractor();
+        contractor.setContractorStreet("Warszawska");
+        contractor.setContractorCity("Warszawa");
+        contractor.setContractorPostalCode("01-234");
+        contractor.setContractorName("EXAMPLE");
+        contractor.setContractorTaxNumber("1231232121");
+
         contractorService.save(contractor);
 
         LinkedList<Contractor> contractorLinkedList = new LinkedList<Contractor>(contractorService.findAll());
@@ -52,13 +52,12 @@ public class ContractorServiceTest {
     @Test
     public void shouldDeleteByObjectWithoutException(){
 
-        Contractor contractor = new Contractor.Builder()
-                .setContractorStreet("Warszawska")
-                .setContractorCity("Warszawa")
-                .setContractorPostalCode("01-234")
-                .setContractorName("EXAMPLE")
-                .setContractorTaxNumber("1231232121")
-                .build();
+        Contractor contractor = new Contractor();
+        contractor.setContractorStreet("Warszawska");
+        contractor.setContractorCity("Warszawa");
+        contractor.setContractorPostalCode("01-234");
+        contractor.setContractorName("EXAMPLE");
+        contractor.setContractorTaxNumber("1231232121");
 
         contractorService.save(contractor);
 
@@ -68,13 +67,12 @@ public class ContractorServiceTest {
     @Test
     public void shouldDeleteByIdWithoutException(){
 
-        Contractor contractor = new Contractor.Builder()
-                .setContractorStreet("Warszawska")
-                .setContractorCity("Warszawa")
-                .setContractorPostalCode("01-234")
-                .setContractorName("EXAMPLE")
-                .setContractorTaxNumber("1231232121")
-                .build();
+        Contractor contractor = new Contractor();
+        contractor.setContractorStreet("Warszawska");
+        contractor.setContractorCity("Warszawa");
+        contractor.setContractorPostalCode("01-234");
+        contractor.setContractorName("EXAMPLE");
+        contractor.setContractorTaxNumber("1231232121");
 
         contractorService.save(contractor);
 
@@ -91,13 +89,12 @@ public class ContractorServiceTest {
     @Test
     public void shouldGetByIdWithoutException(){
 
-        Contractor contractor = new Contractor.Builder()
-                .setContractorStreet("Warszawska")
-                .setContractorCity("Warszawa")
-                .setContractorPostalCode("01-234")
-                .setContractorName("EXAMPLE")
-                .setContractorTaxNumber("1231232121")
-                .build();
+        Contractor contractor = new Contractor();
+        contractor.setContractorStreet("Warszawska");
+        contractor.setContractorCity("Warszawa");
+        contractor.setContractorPostalCode("01-234");
+        contractor.setContractorName("EXAMPLE");
+        contractor.setContractorTaxNumber("1231232121");
 
         contractorService.save(contractor);
 
