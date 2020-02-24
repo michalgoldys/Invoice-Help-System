@@ -82,12 +82,10 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Typ Zlecenia:</span>
                     </div>
-                    <select>
-                        <option data-th-each="OrderType : *{T(pl.michalgoldys.InvoiceHelpSystem.OrderType).values()}"
-                                data-th-value="*{order.orderType}"
-                                data-th-text="*{OrderType}"
-                        id="orderType"
-                        name="OrderType">
+                    <select name="orderType">
+                        <option data-th-each="orderType : ${T(pl.michalgoldys.InvoiceHelpSystem.OrderType).values()}"
+                                data-th-value="${orderType}"
+                                data-th-text="${orderType.name}">
                         </option>
                     </select>
                 </div>
@@ -220,12 +218,10 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Powtarzalność:</span>
                     </div>
-                        <select>
-                    <option data-th-each="OrderMode : *{T(pl.michalgoldys.InvoiceHelpSystem.OrderMode).values()}"
-                            data-th-value="*{orderDetails.orderMode}"
-                            data-th-text="*{OrderMode}"
-                    name="orderMode"
-                    id="orderMode">
+                        <select name="orderMode">
+                    <option data-th-each="orderMode : ${T(pl.michalgoldys.InvoiceHelpSystem.OrderMode).values()}"
+                            data-th-value="${orderMode}"
+                            data-th-text="${orderMode.name}">
                     </option>
                         </select>
                 </div>
