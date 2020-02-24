@@ -39,23 +39,21 @@ public class DatabaseLoader {
                 orderDetails.setOrder(order);
                 order.setOrderDetails(orderDetails);
 
-                Contractor contractor = new Contractor.Builder()
-                        .setContractorStreet("Warszawska")
-                        .setContractorCity("Warszawa")
-                        .setContractorPostalCode("01-234")
-                        .setContractorName("EXAMPLE")
-                        .setContractorTaxNumber("1231232121")
-                        .build();
+                Contractor contractor = new Contractor();
+                contractor.setContractorStreet("Warszawska");
+                contractor.setContractorCity("Warszawa");
+                contractor.setContractorPostalCode("01-234");
+                contractor.setContractorName("EXAMPLE");
+                contractor.setContractorTaxNumber("1231232121");
 
-                ContractorContactDetails contractorContactDetails = new ContractorContactDetails.Builder()
-                        .setContactPersonName("M")
-                        .setContactPersonSurname("G")
-                        .setContactMobile("123456789")
-                        .setContactStreet("Ogrodnicza")
-                        .setContactCity("Warszawa")
-                        .setContactPostalCode("00-000")
-                        .setContactEmailAddress("exmaple@example.com")
-                        .build();
+                ContractorContactDetails contractorContactDetails = new ContractorContactDetails();
+                contractorContactDetails.setContactPersonName("M");
+                contractorContactDetails.setContactPersonSurname("G");
+                contractorContactDetails.setContactMobile("123456789");
+                contractorContactDetails.setContactStreet("Ogrodnicza");
+                contractorContactDetails.setContactCity("Warszawa");
+                contractorContactDetails.setContactPostalCode("00-000");
+                contractorContactDetails.setContactEmailAddress("exmaple@example.com");
 
                 AccountingOrder accountingOrder = new AccountingOrder(order,contractor, contractorContactDetails);
                 log.info("Saving database entites:... " + accountingOrder);
