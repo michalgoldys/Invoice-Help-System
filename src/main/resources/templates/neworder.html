@@ -105,7 +105,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Nazwa Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="*{contractor.contractorName}" name="contractorName" id="contractorName">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorName}" name="contractorName" id="contractorName" required>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Miasto Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="*{contractor.contractorCity}" name="contractorCity" id="contractorCity">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorCity}" name="contractorCity" id="contractorCity" required>
                 </div>
             </div>
             <div class="col-6">
@@ -123,7 +123,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Kod Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="*{contractor.contractorPostalCode}" name="contractorPostalCode" id="contractorPostalCode">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorPostalCode}" name="contractorPostalCode" id="contractorPostalCode"required>
                 </div>
             </div>
             <div class="col-6">
@@ -139,7 +139,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">NIP Zleceniodawcy:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="*{contractor.contractorTaxNumber}" name="contractorTaxNumber" id="contractorTaxNumber">
+                    <input type="text" class="form-control" data-th-value="*{contractor.contractorTaxNumber}" name="contractorTaxNumber" id="contractorTaxNumber" required>
                 </div>
             </div>
         </div>
@@ -149,11 +149,19 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Kwota Zlecenia:</span>
                     </div>
-                    <input type="text" class="form-control" data-th-value="*{order.amount}" name="amount" id="amount">
+                    <input type="text" class="form-control" data-th-value="*{order.amount}" name="amount" id="amount" required>
                 </div>
             </div>
         </div>
         </div>
+
+        <nav class="navbar navbar-light bg-light m-1 p-1 mx-auto w-100 border rounded ">
+            <div class="mx-auto">
+                <h6>Dane Osoby Kontaktowej</h6>
+            </div>
+        </nav>
+
+        <div class="card m-2 p-2 mx-auto ">
         <div class="row justify-content-md-center">
             <div class="col-6">
                 <div class="input-group mb-4 text-center">
@@ -212,6 +220,15 @@
                 </div>
             </div>
         </div>
+        </div>
+
+        <nav class="navbar navbar-light bg-light m-1 p-1 mx-auto w-100 border rounded ">
+            <div class="mx-auto">
+                <h6>Szczegóły Zlecenia</h6>
+            </div>
+        </nav>
+
+        <div class="card m-2 p-2 mx-auto ">
         <div class="row justify-content-center">
             <div class="col-3">
                 <div class="input-group mb-4 text-center">
@@ -238,6 +255,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        
         <div class="row justify-content-end">
             <div class="col-2">
                 <a data-th-href="@{/app/index}" class="btn btn-primary" role="button">Powrót Na Stronę Główną</a>
