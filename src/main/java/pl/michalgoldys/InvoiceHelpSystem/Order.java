@@ -1,11 +1,8 @@
 package pl.michalgoldys.InvoiceHelpSystem;
 
-import lombok.Getter;
-
 import javax.persistence.*;
 import java.util.Objects;
 
-@Getter
 @Entity(name = "order_table")
 public class Order {
 
@@ -27,6 +24,15 @@ public class Order {
     @Column(name ="description")
     private String description;
 
+    public OrderType getOrderType() {
+        return orderType;
+    }
+
+    public Order setOrderType(OrderType orderType) {
+        this.orderType = orderType;
+        return this;
+    }
+
     public OrderDetails getOrderDetails() {
         return orderDetails;
     }
@@ -36,8 +42,43 @@ public class Order {
         return this;
     }
 
-    protected Order(){
+    public Long getOrderId() {
+        return orderId;
+    }
 
+    public Order setOrderId(Long orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public Order setAmount(Double amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    public String getIssueDate() {
+        return issueDate;
+    }
+
+    public Order setIssueDate(String issueDate) {
+        this.issueDate = issueDate;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Order setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    protected Order(){
     }
 
     public Order(OrderType orderType, Double amount, String issueDate, String description) {
